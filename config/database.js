@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+const dotEnv = require('dotenv');
+dotEnv.config();
+const {MONGODB_URI} = process.env;
 
 // Connection to mongodb.
-mongoose.connect("mongodb://0.0.0.0:27017/employee"); 
+mongoose.connect(MONGODB_URI); 
 mongoose.set('strictQuery', true);
 
 
